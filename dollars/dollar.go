@@ -22,7 +22,7 @@ func FromInt(value int64) Dollar {
 }
 
 func FromFloat64(value float64) Dollar {
-	return Dollar {
+	return Dollar{
 		units: int64(math.Ceil(value * precision)),
 	}
 }
@@ -33,4 +33,8 @@ func FromString(value string) (Dollar, error) {
 		return Dollar{}, err
 	}
 	return FromFloat64(parsedValue), nil
+}
+
+func Sum(a, b Dollar) Dollar {
+	return FromFloat64(a.GetValue() + b.GetValue())
 }

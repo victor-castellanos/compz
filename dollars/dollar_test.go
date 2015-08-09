@@ -77,4 +77,10 @@ var _ = Describe("Dollar", func() {
 		})
 	})
 
+	Describe("Sum dollar values", func() {
+		It("Should return the result of adding two dollar values", func() {
+			Expect(Sum(FromInt(1000), FromFloat64(1000))).To(Equal(FromFloat64(2000)))
+		})
+	})
+
 })
