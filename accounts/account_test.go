@@ -27,19 +27,23 @@ var _ = Describe("Investment", func() {
 			Expect(account.CapitalGain).To(Equal(dollars.FromInt(1000)))
 		})
 
+		Context("with periodic addition", func() {
+			BeforeEach(func() {
+				sut.Deposits =dollars.FromInt(10000)
+			})
+
+			Context("after multiple tics", func() {
+				BeforeEach(func() {
+					account = sut.Grow(sut.Grow(Account{}))
+				})
+
+				It("should add a deposit on every tic", func() {
+					Expect(account.Balance).To(Equal(dollars.FromInt(23100)))
+					Expect(account.Invested).To(Equal(dollars.FromInt(20000)))
+				})
+			})
+		})
 	})
 
-	Describe("Grow with periodic addition", func() {
-		BeforeEach(func() {
-			sut = Investment{
-				InterestRate: 10,
-				Deposits:     dollars.FromInt(10000),
-			}
-			account = sut.Grow(Account{})
-		})
-		It("should return the invested balance", func() {
-			Expect(account.Balance).To(Equal(dollars.FromInt(11000)))
-			Expect(account.Invested).To(Equal(dollars.FromInt(10000)))
-		})
-	})
+
 })
