@@ -1,4 +1,4 @@
-package investments_test
+package accounts_test
 
 import (
 	. "github.com/onsi/ginkgo"

@@ -1,0 +1,7 @@
+mode: atomic
+github.com/victor-castellanos/compz/dollar/dollar.go:14.36,16.2 1 6
+github.com/victor-castellanos/compz/dollar/dollar.go:18.34,22.2 1 1
+github.com/victor-castellanos/compz/dollar/dollar.go:24.40,28.2 1 4
+github.com/victor-castellanos/compz/dollar/dollar.go:30.47,32.16 2 3
+github.com/victor-castellanos/compz/dollar/dollar.go:35.2,35.38 1 2
+github.com/victor-castellanos/compz/dollar/dollar.go:32.16,34.3 1 1

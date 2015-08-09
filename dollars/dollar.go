@@ -1,4 +1,4 @@
-package dollar
+package dollars
 
 import (
 	"math"
@@ -22,7 +22,7 @@ func FromInt(value int64) Dollar {
 }
 
 func FromFloat64(value float64) Dollar {
-	return Dollar{
+	return Dollar {
 		units: int64(math.Ceil(value * precision)),
 	}
 }

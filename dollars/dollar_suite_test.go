@@ -1,4 +1,4 @@
-package dollar_test
+package dollars_test
 
 import (
 	. "github.com/onsi/ginkgo"

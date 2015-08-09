@@ -1,4 +1,4 @@
-package dollar
+package dollars
 
 import (
 	. "github.com/onsi/ginkgo"
