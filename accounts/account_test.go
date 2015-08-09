@@ -7,14 +7,14 @@ import (
 )
 
 var _ = Describe("Investment", func() {
-	var(
-		sut Investment
+	var (
+		sut     Investment
 		account Account
 	)
 
 	Describe("Grow", func() {
 		BeforeEach(func() {
-			sut = Investment {
+			sut = Investment{
 				InterestRate: 10,
 			}
 			account = sut.Grow(Account{
@@ -27,5 +27,19 @@ var _ = Describe("Investment", func() {
 			Expect(account.CapitalGain).To(Equal(dollars.FromInt(1000)))
 		})
 
+	})
+
+	Describe("Grow with periodic addition", func() {
+		BeforeEach(func() {
+			sut = Investment{
+				InterestRate: 10,
+				Deposits:     dollars.FromInt(10000),
+			}
+			account = sut.Grow(Account{})
+		})
+		It("should return the invested balance", func() {
+			Expect(account.Balance).To(Equal(dollars.FromInt(11000)))
+			Expect(account.Invested).To(Equal(dollars.FromInt(10000)))
+		})
 	})
 })
