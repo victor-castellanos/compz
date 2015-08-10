@@ -29,7 +29,7 @@ var _ = Describe("Investment", func() {
 
 		Context("with periodic addition", func() {
 			BeforeEach(func() {
-				sut.Deposits =dollars.FromInt(10000)
+				sut.Deposits = dollars.FromInt(10000)
 			})
 
 			Context("after multiple tics", func() {
@@ -44,6 +44,5 @@ var _ = Describe("Investment", func() {
 			})
 		})
 	})
-
 
 })
