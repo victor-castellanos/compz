@@ -1,4 +1,5 @@
 *.coverprofile
+
 # Created by https://www.gitignore.io
 
 ### Go ###
@@ -17,7 +18,7 @@ _test
 
 *.cgo1.go
 *.cgo2.c
-_cgo_defun.c
+_cgo_defun.cN
 _cgo_gotypes.go
 _cgo_export.*
 
