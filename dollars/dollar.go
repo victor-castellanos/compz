@@ -11,8 +11,8 @@ type Dollar struct {
 	units int64
 }
 
-func (d Dollar) GetValue() float64 {
-	return float64(d.units) / precision
+func (self Dollar) GetValue() float64 {
+	return float64(self.units) / precision
 }
 
 func FromInt(value int64) Dollar {

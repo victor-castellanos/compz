@@ -19,12 +19,12 @@ type Investment struct {
 	Deposits     dollars.Dollar
 }
 
-func (i Investment) Grow(account Account) Account {
-	initialBalance := dollars.Sum(account.Balance, i.Deposits)
-	capitalGain := getInterestGenerated(initialBalance, i.InterestRate)
+func (self Investment) Grow(account Account) Account {
+	initialBalance := dollars.Sum(account.Balance, self.Deposits)
+	capitalGain := getInterestGenerated(initialBalance, self.InterestRate)
 	return Account{
 		CapitalGain: capitalGain,
-		Invested:    dollars.Sum(i.Deposits, account.Invested),
+		Invested:    dollars.Sum(self.Deposits, account.Invested),
 		Balance:     dollars.Sum(capitalGain, initialBalance),
 	}
 }
